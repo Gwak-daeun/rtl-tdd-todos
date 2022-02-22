@@ -8,7 +8,9 @@ const TodoList = ({todos, onToggle, onRemove}) => {
                 <TodoItem todo={todo}
                 key={todo.id} 
                 onToggle={onToggle} 
-                onRemove={onRemove} />
+                onRemove={onRemove} 
+                
+                />
             ))}
         </ul>
     );

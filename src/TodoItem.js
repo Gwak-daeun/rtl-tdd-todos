@@ -7,8 +7,10 @@ const TodoItem = ({todo, onToggle, onRemove}) => {
     return(
         <li>
             <span
-                style={{textDecoration: done ? 'line-through' : 'none'}}
-            onClick={toggle}>{text}</span>
+            style={{textDecoration: done ? 'line-through' : 'none'}}
+            onClick={toggle}>
+                {text}
+                </span>
             <button onClick={remove}>삭제</button>
         </li>
     );

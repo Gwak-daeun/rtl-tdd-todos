@@ -14,7 +14,7 @@ const TodoApp = () => {
             text: 'react-testing-library 사용하기',
             done: true,
         },
-]);
+    ]);
 
     const nextId = useRef(3); // 새로 추가 할 항목에서 사용할 id
     const onInsert = useCallback(
@@ -29,10 +29,17 @@ const TodoApp = () => {
         }, [todos]
     );
 
+    const onToggle = useCallback(
+        (id) => {
+            setTodos(
+            todos.map((todo) => todo.id === id ? {...todo, done: !todo.done} : todo)
+            );
+        }, [todos]);
+
         return(
         <div>
             <Todoform data-testid='helloworld' onInsert={onInsert}/>
-            <TodoList todos={todos} />
+            <TodoList todos={todos} onToggle={onToggle} />
         </div>
     );
 };
