@@ -7,5 +7,10 @@ describe('<TodoApp />', () => {
         const {getByText, getByTestId} = render(<TodoApp />);
         getByText('등록');
         getByTestId('TodoList');
-    })
+    });
+    it('renders two default todos', () => {
+        const {getByText} = render(<TodoApp />);
+        getByText('TDD 배우기');
+        getByText('react-testing-library 사용하기');
+    });
 })
